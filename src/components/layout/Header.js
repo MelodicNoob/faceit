@@ -28,23 +28,23 @@ export default class Header extends Component {
   }
   render() {
     return (
-      <Navbar color='primary' dark expand='md'>
+      <Navbar color='primary' dark expand='md' className='mb-4'>
         <LinkContainer to='/'>
           <NavbarBrand>FaceCheat</NavbarBrand>
         </LinkContainer>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className='ml-auto' navbar>
-            <LinkContainer to='/dashboard'>
-              <NavItem>
+            <NavItem>
+              <LinkContainer to='/dashboard'>
                 <NavLink>Dashboard</NavLink>
-              </NavItem>
-            </LinkContainer>
-            <LinkContainer to='/profile'>
-              <NavItem>
+              </LinkContainer>
+            </NavItem>
+            <NavItem>
+              <LinkContainer to='/profile'>
                 <NavLink>Profile</NavLink>
-              </NavItem>
-            </LinkContainer>
+              </LinkContainer>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Container } from 'reactstrap';
 
 import Header from './components/layout/Header';
 import Login from './components/pages/Login';
@@ -13,12 +14,13 @@ class App extends Component {
       <Router>
         <div className='App'>
           <Header />
-
-          <Switch>
-            <Route exact path='/' component={Login} />
-            <Route path='/dashboard' component={Dashboard} />
-            <Route path='/profile' component={Profile} />
-          </Switch>
+          <Container>
+            <Switch>
+              <Route exact path='/' component={Login} />
+              <Route path='/dashboard' component={Dashboard} />
+              <Route path='/profile' component={Profile} />
+            </Switch>
+          </Container>
         </div>
       </Router>
     );
