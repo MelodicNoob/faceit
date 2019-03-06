@@ -10,6 +10,8 @@ import {
   NavLink
 } from 'reactstrap';
 
+import { ReactComponent as Logo } from '../../face.svg';
+
 import { LinkContainer } from 'react-router-bootstrap';
 
 export default class Header extends Component {
@@ -30,7 +32,9 @@ export default class Header extends Component {
     return (
       <Navbar color='primary' dark expand='md' className='mb-4'>
         <LinkContainer to='/'>
-          <NavbarBrand>FaceCheat</NavbarBrand>
+          <NavbarBrand>
+            <Logo fill='white' height={30} /> FaceCheat
+          </NavbarBrand>
         </LinkContainer>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
