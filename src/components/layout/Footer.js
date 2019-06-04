@@ -6,7 +6,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 class Footer extends React.Component {
   render() {
     return (
-      <footer>
+      <footer className='my-4'>
         <NavLink to='/'>
           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 20'>
             <g fill='red'>

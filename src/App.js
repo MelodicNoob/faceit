@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <Router>
         <>
-          <div className='border border-light mx-lg-2 my-lg-5 p-lg-4 mx-md-4 my-md-2'>
+          <div className='app-container'>
             <Header />
             <Switch>
               <Route exact path='/' component={Login} />
