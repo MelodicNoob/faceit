@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { Row } from 'reactstrap';
+import { MDBRow } from 'mdbreact';
 
-import Class from './Class';
+import ClassListItem from './ClassListItem';
 
-export default class ClassList extends Component {
-  render() {
-    return (
-      <Row>
-        <Class />
-      </Row>
-    );
-  }
-}
+const ClassList = props => {
+  const { classes } = props;
+  const classesList = classes.map(classes => (
+    <ClassListItem key={classes.id} id={classes.id} name={classes.name} />
+  ));
+  return <MDBRow>{classesList}</MDBRow>;
+};
+
+export default ClassList;

@@ -1,0 +1,116 @@
+// Your custom styles
+header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-items: flex-end;
+  align-items: center;
+  margin-bottom: 40px;
+
+  .header-buttons {
+    font-size: 1.6em;
+    a,
+    a:active,
+    a:focus,
+    a:visited {
+      color: $grey-base;
+      &:hover {
+        color: $grey-darken-2;
+      }
+    }
+    i {
+      margin-right: 20px;
+    }
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      transform: skewX(-13deg);
+      li {
+        background: lightgrey;
+        display: inline-block;
+        border: 5px solid black;
+        a {
+          display: block;
+          width: 40px;
+          color: transparent;
+          &:hover,
+          &:active,
+          &:focus,
+          &:visited {
+            color: transparent;
+          }
+        }
+        &:first-child,
+        &:nth-child(2) {
+          border-right: 0;
+        }
+        &:last-child {
+          border-left: 0;
+        }
+        &:nth-child(1) {
+          a {
+            &:hover,
+            &.active {
+              background: $red;
+            }
+          }
+        }
+        &:nth-child(2) {
+          a {
+            &:hover,
+            &.active {
+              background: $purple;
+            }
+          }
+        }
+        &:nth-child(3) {
+          a {
+            &:hover,
+            &.active {
+              background: $orange;
+            }
+          }
+        }
+        &:nth-child(4) {
+          a {
+            &:hover,
+            &.active {
+              background: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dashboard {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: 'd1 d2 d3' 'd1 d2 d4';
+  grid-template-columns: repeat(3, 1fr);
+  .d1 {
+    grid-area: d1;
+  }
+  .d2 {
+    grid-area: d2;
+  }
+  .d3 {
+    grid-area: d3;
+  }
+  .d4 {
+    grid-area: d4;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  svg {
+    height: 20px;
+  }
+}
