@@ -11,10 +11,14 @@ export default class Classes extends Component {
     ];
     return (
       <MDBCard color='red'>
-        <MDBCardHeader>
-          <h3 className='text-white'>
+        <MDBCardHeader className='text-white'>
+          <h3 className='float-left'>
             <i class='fal fa-chalkboard-teacher' /> Classes
           </h3>
+          <div className='view-selectors float-right'>
+            <i class='fas fa-list' />
+            <i class='fas fa-th-large' />
+          </div>
         </MDBCardHeader>
         <MDBCardBody>
           <ClassList classes={classes} />

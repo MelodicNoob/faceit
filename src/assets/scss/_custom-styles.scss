@@ -14,10 +14,20 @@
 
 header {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 140px 1fr auto;
   justify-items: flex-end;
   align-items: center;
   margin-bottom: 40px;
+
+  .mobile-logo {
+    width: 140px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .mobile-logo {
+      visibility: hidden;
+    }
+  }
 
   .header-buttons {
     font-size: 1.6em;
@@ -141,10 +151,20 @@ header {
 }
 
 footer {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 2rem;
-  svg {
-    height: 20px;
+  display: none;
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 2rem;
+    svg {
+      height: 20px;
+    }
+  }
+}
+
+.view-selectors {
+  font-size: 1.6rem;
+  i {
+    margin: 0 0.5rem;
   }
 }
