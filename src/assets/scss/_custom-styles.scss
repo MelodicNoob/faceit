@@ -8,7 +8,7 @@
 		padding: 2rem 1rem;
 	}
 	@include media-breakpoint-up(lg) {
-		margin: 6rem 2rem;
+		margin: 4rem 2rem;
 	}
 	@include media-breakpoint-up(xl) {
 		margin: 6rem 4rem;
@@ -69,11 +69,19 @@ header {
 					display: block;
 					color: transparent;
 					height: 50px;
+					position: relative;
 					&:hover,
 					&:active,
 					&:focus,
 					&:visited {
 						color: transparent;
+					}
+					i {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						color: $white;
 					}
 				}
 				&:nth-child(1) {
@@ -120,6 +128,9 @@ header {
 					width: auto;
 					a {
 						height: 30px;
+						i {
+							visibility: hidden;
+						}
 					}
 				}
 			}
@@ -133,6 +144,7 @@ header {
 	@include media-breakpoint-up(sm) {
 		grid-template-areas: 'd1 d2' 'd4 d3';
 		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 3fr 1fr;
 	}
 	@include media-breakpoint-up(lg) {
 		grid-template-areas: 'd1 d2 d3' 'd1 d2 d4';
@@ -177,6 +189,21 @@ footer {
 		cursor: pointer;
 		&.active {
 			opacity: 1;
+		}
+	}
+}
+
+.class-list-item {
+	max-width: 100%;
+	&.edit {
+		@include media-breakpoint-up(sm) {
+			flex: 0 0 100%;
+		}
+		@include media-breakpoint-up(md) {
+			flex: 0 0 66.66%;
+		}
+		@include media-breakpoint-up(lg) {
+			flex: 0 0 50%;
 		}
 	}
 }

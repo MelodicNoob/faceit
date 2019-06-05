@@ -5,10 +5,10 @@ import Navigation from './Navigation/Navigation';
 import MobileLogo from '../../assets/MobileLogo';
 
 const links = [
-	{ id: 1, name: 'classes', linkColor: '#ff0000' },
-	{ id: 2, name: 'schedule', linkColor: '#453192' },
-	{ id: 3, name: 'profile', linkColor: '#fbb03b' },
-	{ id: 4, name: 'settings', linkColor: '#29abe2' }
+	{ id: 1, name: 'classes', linkColor: '#ff0000', icon: 'chalkboard-teacher' },
+	{ id: 2, name: 'schedule', linkColor: '#453192', icon: 'clock' },
+	{ id: 3, name: 'profile', linkColor: '#fbb03b', icon: 'user' },
+	{ id: 4, name: 'settings', linkColor: '#29abe2', icon: 'cog' }
 ];
 
 export const Header = withRouter(props => <HFComponent {...props} header />);

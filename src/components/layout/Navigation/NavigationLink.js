@@ -4,15 +4,17 @@ import { NavLink } from 'react-router-dom';
 export default class NavigationLink extends Component {
 	render() {
 		const { isDash } = this.props;
-		const { id, name, linkColor } = this.props.link;
+		const { name, linkColor, icon } = this.props.link;
 		return (
-			<li key={id}>
+			<li>
 				{isDash ? (
 					<NavLink to={`/${name}`} style={{ background: `${linkColor}` }}>
-						{name}
+						<i className={`fal fa-${icon}`} /> {name}
 					</NavLink>
 				) : (
-					<NavLink to={`/${name}`}>{name}</NavLink>
+					<NavLink to={`/${name}`}>
+						<i className={`fal fa-${icon}`} /> {name}
+					</NavLink>
 				)}
 			</li>
 		);

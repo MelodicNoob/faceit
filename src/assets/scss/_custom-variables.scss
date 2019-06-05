@@ -9,5 +9,7 @@ $purple: #453192;
 $orange: #fbb03b;
 $blue: #29abe2;
 
+$default-color: $red;
 $primary-color: $red;
 $link-color: $red;
+$link-hover-color: darken($link-color, 15%);
