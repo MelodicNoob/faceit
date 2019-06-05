@@ -1,13 +1,7 @@
 import React from 'react';
 import NavigationLink from './NavigationLink';
 
-export default function Navigation({ isDash }) {
-	const links = [
-		{ id: 1, name: 'classes', linkColor: 'red' },
-		{ id: 2, name: 'schedule', linkColor: '#453192' },
-		{ id: 3, name: 'profile', linkColor: '#fbb03b' },
-		{ id: 4, name: 'settings', linkColor: '#29abe2' }
-	];
+export default function Navigation({ links, isDash }) {
 	return (
 		<nav>
 			<ul>

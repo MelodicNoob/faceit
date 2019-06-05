@@ -12,9 +12,10 @@ import {
 
 export default class ClassListItem extends Component {
 	render() {
-		const { id, name } = this.props;
+		const { id, name, view } = this.props;
+		const isCard = view === 'cards';
 		return (
-			<MDBCol sm={6} md={4} lg={3}>
+			<MDBCol sm={isCard ? 6 : 12} md={isCard ? 4 : 12} lg={isCard ? 3 : 12}>
 				<MDBCard className='mb-3'>
 					<MDBCardHeader>
 						{id}

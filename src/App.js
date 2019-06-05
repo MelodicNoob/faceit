@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Header } from './components/layout/Header';
-import Footer from './components/layout/Footer';
+import { Header, Footer } from './components/layout/HeaderFooter';
 import Login from './components/pages/Login';
 import Dashboard from './components/pages/Dashboard';
 import Classes from './components/pages/Classes';
