@@ -41,13 +41,13 @@ export default class ClassListItem extends Component {
 								<i className='fas fa-users' /> 18
 							</li>
 							<li className='list-inline-item'>
-								<i className='fas fa-portrait' /> 12
-							</li>
-							<li className='list-inline-item'>
 								<i className='fas fa-notes-medical' /> 2
 							</li>
 							<li className='list-inline-item'>
 								<i className='fas fa-exclamation-square' /> 0
+							</li>
+							<li className='list-inline-item'>
+								<i className='fas fa-globe' /> 1
 							</li>
 						</ul>
 					</MDBCardHeader>
