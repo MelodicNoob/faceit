@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBCard, MDBCardHeader, MDBCardBody } from 'mdbreact';
+import { MDBBtn, MDBIcon, MDBCard, MDBCardHeader, MDBCardBody } from 'mdbreact';
 
 import ClassList from '../classes/ClassList';
 
@@ -32,6 +32,13 @@ export default class Classes extends Component {
 					</h3>
 					<div className='view-selectors float-right'>
 						<i
+							class={
+								view === 'cards'
+									? 'fas fa-sort-alpha-up active'
+									: 'fas fa-sort-alpha-down active'
+							}
+						/>
+						<i
 							onClick={listView}
 							className={
 								view === 'cards' ? 'fas fa-list' : 'fas fa-list active'
@@ -44,6 +51,9 @@ export default class Classes extends Component {
 							}
 						/>
 					</div>
+					<MDBBtn size='sm' rounded color='white' className='float-right'>
+						Add Class <MDBIcon className='text-primary' icon='plus' />
+					</MDBBtn>
 				</MDBCardHeader>
 				<MDBCardBody>
 					<ClassList classes={classes} view={view} />
