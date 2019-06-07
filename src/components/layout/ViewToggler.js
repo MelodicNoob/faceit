@@ -1,17 +1,20 @@
 import React from 'react';
 
+import ViewListIcon from '@material-ui/icons/ViewList';
+import ViewModuleIcon from '@material-ui/icons/ViewModule';
+
 export default function ViewToggler({ view, toggle }) {
 	return (
 		<div className='view-selectors float-right'>
-			<i
+			<ViewModuleIcon
+				fontSize='large'
 				onClick={() => toggle('cards')}
-				className={
-					view === 'cards' ? 'fa fa-th-large active' : 'fa fa-th-large'
-				}
+				className={view === 'cards' ? 'active' : null}
 			/>
-			<i
+			<ViewListIcon
+				fontSize='large'
 				onClick={() => toggle('list')}
-				className={view === 'cards' ? 'fa fa-list' : 'fa fa-list active'}
+				className={view === 'list' ? 'active' : null}
 			/>
 		</div>
 	);

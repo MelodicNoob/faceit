@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import {
+	Card,
+	CardContent,
+	CardActions,
+	Button,
+	TextField,
+	Grid,
+	Typography
+} from '@material-ui/core';
 
 import EditIcon from '@material-ui/icons/Edit';
 import CancelIcon from '@material-ui/icons/Cancel';
@@ -50,7 +52,7 @@ export default class ClassListItem extends Component {
 								<i className='fas fa-notes-medical' /> 2
 							</li>
 							<li className='list-inline-item'>
-								<i className='fas fa-exclamation-square' /> 0
+								<i className='fas fa-exclamation-triangle' /> 0
 							</li>
 							<li className='list-inline-item'>
 								<i className='fas fa-globe' /> 1

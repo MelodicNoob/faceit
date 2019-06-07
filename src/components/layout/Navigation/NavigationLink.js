@@ -9,11 +9,11 @@ export default class NavigationLink extends Component {
 			<li>
 				{isDash ? (
 					<NavLink to={`/${name}`} style={{ background: `${linkColor}` }}>
-						<i className={`fal fa-${icon}`} /> {name}
+						<i className={`fa fa-${icon}`} /> {name}
 					</NavLink>
 				) : (
 					<NavLink to={`/${name}`}>
-						<i className={`fal fa-${icon}`} /> {name}
+						<i className={`fa fa-${icon}`} /> {name}
 					</NavLink>
 				)}
 			</li>
