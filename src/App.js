@@ -15,26 +15,27 @@ import { Profile } from './components/pages/Profile';
 import { Settings } from './components/pages/Settings';
 import Page from './components/pages/Page';
 
+const colors = {
+	red: '#FF0000',
+	purple: '#453192',
+	orange: '#fbb03b',
+	blue: '#29abe2'
+};
+
 const mainTheme = createMuiTheme({
 	palette: {
-		type: 'dark',
+		type: 'light',
 		primary: {
-			main: '#f00'
+			main: colors.red
 		},
 		secondary: {
-			main: '#f00'
+			main: colors.purple
 		}
 	}
 });
 
 class App extends Component {
 	render() {
-		const colors = {
-			red: '#FF0000',
-			purple: '#453192',
-			orange: '#fbb03b',
-			blue: '#29abe2'
-		};
 		return (
 			<Router>
 				<ThemeProvider theme={mainTheme}>
@@ -54,6 +55,7 @@ class App extends Component {
 										title='Classes'
 										icon='chalkboard-teacher'
 										color={colors.red}
+										theme='light'
 									>
 										<Classes />
 									</Page>
@@ -62,7 +64,12 @@ class App extends Component {
 							<Route
 								path='/schedule'
 								render={() => (
-									<Page title='Schedule' icon='clock' color={colors.purple}>
+									<Page
+										title='Schedule'
+										icon='clock'
+										color={colors.purple}
+										theme='dark'
+									>
 										<Schedule />
 									</Page>
 								)}
@@ -70,7 +77,12 @@ class App extends Component {
 							<Route
 								path='/profile'
 								render={() => (
-									<Page title='Profile' icon='user' color={colors.orange}>
+									<Page
+										title='Profile'
+										icon='user'
+										color={colors.orange}
+										theme='dark'
+									>
 										<Profile />
 									</Page>
 								)}
@@ -78,7 +90,12 @@ class App extends Component {
 							<Route
 								path='/settings'
 								render={() => (
-									<Page title='Settings' icon='cog' color={colors.blue}>
+									<Page
+										title='Settings'
+										icon='cog'
+										color={colors.blue}
+										theme='light'
+									>
 										<Settings />
 									</Page>
 								)}

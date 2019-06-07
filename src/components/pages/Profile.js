@@ -35,6 +35,7 @@ export const Profile = () => {
 
 		setChecked(newChecked);
 	};
+
 	return (
 		<Grid container spacing={4}>
 			<Grid item xs={4} lg={3}>

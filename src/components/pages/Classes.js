@@ -6,7 +6,7 @@ import ClassListItem from './ClassListItem';
 
 const ClassList = ({ classes, view }) => {
 	const classesList = classes.map(({ id, name }) => (
-		<ClassListItem key={id} name={name} view={view} />
+		<ClassListItem key={id} id={id} name={name} view={view} />
 	));
 	return (
 		<Grid container spacing={2}>
