@@ -5,12 +5,12 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
+import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-import Edit from '@material-ui/icons/Edit';
-import SaveIcon from '@material-ui/icons/Save';
+import EditIcon from '@material-ui/icons/Edit';
+import CancelIcon from '@material-ui/icons/Cancel';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
 export default class ClassListItem extends Component {
@@ -40,9 +40,8 @@ export default class ClassListItem extends Component {
 				md={isCard ? 4 : 12}
 				lg={isCard ? 3 : 12}
 			>
-				<Card className='mb-3'>
-					<CardContent>
-						<Typography variant='h5'>{id}</Typography>
+				<Card className='position-relative'>
+					<div className='card-header'>
 						<ul className='list-inline mb-0'>
 							<li className='list-inline-item'>
 								<i className='fas fa-users' /> 18
@@ -57,17 +56,40 @@ export default class ClassListItem extends Component {
 								<i className='fas fa-globe' /> 1
 							</li>
 						</ul>
-						<h3>{name}</h3>
+					</div>
+					<CardContent>
+						<Typography variant='h5'>{name}</Typography>
+						<Typography variant='button'>{id}</Typography>
 						{this.state.edit ? (
 							<>
-								<Input icon='pencil-alt' type='textarea' label='Notes' />
+								<TextField
+									id='standard-multiline-flexible'
+									label='Notes'
+									multiline
+									fullWidth
+									rows='4'
+									rowsMax='5'
+									margin='normal'
+								/>
+
 								<Button
 									color='primary'
+									variant='contained'
 									onClick={this.editMode}
 									size='small'
-									className='float-right'
+									className='float-right my-2'
 								>
-									<SaveIcon /> Save
+									Save
+								</Button>
+								<Button
+									color='primary'
+									variant='outlined'
+									onClick={this.editMode}
+									size='small'
+									className='float-right my-2 mr-2'
+								>
+									<CancelIcon className='mr-1' style={{ fontSize: 20 }} />{' '}
+									Cancel
 								</Button>
 							</>
 						) : (
@@ -79,18 +101,19 @@ export default class ClassListItem extends Component {
 								</p>
 								<Button
 									color='primary'
-									variant='outlined'
 									onClick={this.editMode}
 									size='small'
-									className='float-right'
+									className='position-absolute'
+									style={{ top: 10, right: 10 }}
+									variant='outlined'
 								>
-									<Edit /> Edit
+									<EditIcon style={{ fontSize: 20, marginRight: '3px' }} /> Edit
 								</Button>
 							</>
 						)}
 					</CardContent>
 					<CardActions>
-						<Button size='small' component={CollisionLink}>
+						<Button color='primary' size='small' component={CollisionLink}>
 							See Class <KeyboardArrowRight />
 						</Button>
 					</CardActions>

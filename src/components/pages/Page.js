@@ -38,14 +38,14 @@ export default class Page extends Component {
 		});
 		return (
 			<Card style={{ backgroundColor: color }}>
-				<CardContent>
-					<div className='clearfix text-white'>
-						<Typography variant='h4' gutterBottom className='float-left'>
-							<i className={`fal fa-${icon}`} /> {title}
-						</Typography>
+				<div className='card-header clearfix text-white'>
+					<Typography variant='h5' className='float-left mt-1'>
+						<i className={`fa fa-${icon}`} /> {title}
+					</Typography>
 
-						<ViewToggler view={view} toggle={this.toggleView} />
-					</div>
+					<ViewToggler view={view} toggle={this.toggleView} />
+				</div>
+				<CardContent>
 					<ThemeProvider theme={mainTheme}>{children}</ThemeProvider>
 				</CardContent>
 			</Card>
