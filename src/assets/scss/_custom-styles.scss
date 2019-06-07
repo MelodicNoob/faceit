@@ -172,7 +172,8 @@ header {
 		a {
 			color: $white;
 			&:hover {
-				color: darken($white, 15%);
+				color: $white;
+				opacity: 0.7;
 			}
 		}
 	}
