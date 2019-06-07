@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import {
-	MDBBtn,
-	MDBCol,
-	MDBCard,
-	MDBCardTitle,
-	MDBCardBody,
-	MDBCardHeader,
-	MDBCardFooter,
-	MDBCardText,
-	MDBInput
-} from 'mdbreact';
+
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
+import Grid from '@material-ui/core/Grid';
 
 export default class ClassListItem extends Component {
 	constructor(props) {
@@ -27,14 +24,15 @@ export default class ClassListItem extends Component {
 		const { id, name, view } = this.props;
 		const isCard = view === 'cards';
 		return (
-			<MDBCol
+			<Grid
+				item
 				className={edit ? 'edit class-list-item' : 'class-list-item'}
 				sm={isCard ? 6 : 12}
 				md={isCard ? 4 : 12}
 				lg={isCard ? 3 : 12}
 			>
-				<MDBCard className='mb-3'>
-					<MDBCardHeader>
+				<Card className='mb-3'>
+					<CardHeader>
 						{id}
 						<ul className='list-inline mb-0'>
 							<li className='list-inline-item'>
@@ -50,45 +48,45 @@ export default class ClassListItem extends Component {
 								<i className='fas fa-globe' /> 1
 							</li>
 						</ul>
-					</MDBCardHeader>
-					<MDBCardBody>
-						<MDBCardTitle>{name}</MDBCardTitle>
+					</CardHeader>
+					<CardContent>
+						<h3>{name}</h3>
 						{this.state.edit ? (
 							<>
-								<MDBInput icon='pencil-alt' type='textarea' label='Notes' />
-								<MDBBtn
+								<Input icon='pencil-alt' type='textarea' label='Notes' />
+								<Button
 									onClick={this.editMode}
 									size='sm'
 									className='float-right'
 								>
 									<i className='fas fa-check' /> Save
-								</MDBBtn>
+								</Button>
 							</>
 						) : (
 							<>
-								<MDBCardText>
+								<p>
 									Lorem ipsum dolor, sit amet consectetur adipisicing elit.
 									Accusantium numquam deleniti voluptate quam vitae debitis
 									molestias doloribus exercitationem.
-								</MDBCardText>
-								<MDBBtn
+								</p>
+								<Button
 									outline
 									onClick={this.editMode}
 									size='sm'
 									className='float-right'
 								>
 									<i className='fas fa-pencil' /> Edit
-								</MDBBtn>
+								</Button>
 							</>
 						)}
-					</MDBCardBody>
-					<MDBCardFooter>
+					</CardContent>
+					<CardActionArea>
 						<NavLink to={`/classes/${id}`}>
 							See Class <i className='fas fa-arrow-right' />
 						</NavLink>
-					</MDBCardFooter>
-				</MDBCard>
-			</MDBCol>
+					</CardActionArea>
+				</Card>
+			</Grid>
 		);
 	}
 }

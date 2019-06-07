@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import { MDBCard, MDBCardHeader, MDBCardBody } from 'mdbreact';
+import Grid from '@material-ui/core/Grid';
 
 export default class Schedule extends Component {
 	render() {
 		return (
-			<MDBCard color='purple'>
-				<MDBCardHeader>
-					<h3 className='text-white'>
-						<i className='fal fa-clock' /> Schedule
-					</h3>
-				</MDBCardHeader>
-				<MDBCardBody />
-			</MDBCard>
+			<Grid container spacing={4}>
+				<Grid item xs={12} md={8}>
+					Calendar
+				</Grid>
+			</Grid>
 		);
 	}
 }

@@ -1,39 +1,51 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MDBCard, MDBCardHeader } from 'mdbreact';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
 export default class Dashboard extends Component {
 	render() {
+		const { colors } = this.props;
+		const { red, purple, orange, blue } = colors;
 		return (
 			<div className='dashboard'>
-				<MDBCard color='red' text='white' className='d1'>
-					<MDBCardHeader>
-						<NavLink to='/classes' className='text-white'>
-							<i className='fas fa-chalkboard-teacher' /> Classes
-						</NavLink>
-					</MDBCardHeader>
-				</MDBCard>
-				<MDBCard color='purple' text='white' className='d2'>
-					<MDBCardHeader>
-						<NavLink to='/schedule' className='text-white'>
-							<i className='fas fa-clock' /> Schedule
-						</NavLink>
-					</MDBCardHeader>
-				</MDBCard>
-				<MDBCard color='blue' text='white' className='d3'>
-					<MDBCardHeader>
-						<NavLink to='/settings' className='text-white'>
-							<i className='fas fa-cog' /> Settings
-						</NavLink>
-					</MDBCardHeader>
-				</MDBCard>
-				<MDBCard color='orange' text='white' className='d4'>
-					<MDBCardHeader>
-						<NavLink to='/profile' className='text-white'>
-							<i className='fas fa-user' /> Profile
-						</NavLink>
-					</MDBCardHeader>
-				</MDBCard>
+				<Card style={{ backgroundColor: `${red}` }} className='d1'>
+					<CardContent>
+						<Typography variant='h5' component='h2'>
+							<NavLink to='/classes'>
+								<i className='fas fa-chalkboard-teacher' /> Classes
+							</NavLink>
+						</Typography>
+					</CardContent>
+				</Card>
+				<Card style={{ backgroundColor: `${purple}` }} className='d2'>
+					<CardContent>
+						<Typography variant='h5' component='h2'>
+							<NavLink to='/schedule'>
+								<i className='fas fa-clock' /> Schedule
+							</NavLink>
+						</Typography>
+					</CardContent>
+				</Card>
+				<Card style={{ backgroundColor: `${blue}` }} className='d3'>
+					<CardContent>
+						<Typography variant='h5' component='h2'>
+							<NavLink to='/settings'>
+								<i className='fas fa-cog' /> Settings
+							</NavLink>
+						</Typography>
+					</CardContent>
+				</Card>
+				<Card style={{ backgroundColor: `${orange}` }} className='d4'>
+					<CardContent>
+						<Typography variant='h5' component='h2'>
+							<NavLink to='/profile'>
+								<i className='fas fa-user' /> Profile
+							</NavLink>
+						</Typography>
+					</CardContent>
+				</Card>
 			</div>
 		);
 	}

@@ -141,6 +141,7 @@ header {
 .dashboard {
 	display: grid;
 	grid-gap: 10px;
+	color: $white;
 	@include media-breakpoint-up(sm) {
 		grid-template-areas: 'd1 d2' 'd4 d3';
 		grid-template-columns: repeat(2, 1fr);
@@ -163,6 +164,17 @@ header {
 	}
 	.d4 {
 		grid-area: d4;
+	}
+	.d1,
+	.d2,
+	.d3,
+	.d4 {
+		a {
+			color: $white;
+			&:hover {
+				color: darken($white, 15%);
+			}
+		}
 	}
 }
 
@@ -196,13 +208,12 @@ footer {
 .class-list-item {
 	max-width: 100%;
 	&.edit {
-		@include media-breakpoint-up(sm) {
-			flex: 0 0 100%;
-		}
-		@include media-breakpoint-up(md) {
+		max-width: 100%;
+		flex: 0 0 100%;
+		@include media-breakpoint-up(lg) {
 			flex: 0 0 66.66%;
 		}
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
 			flex: 0 0 50%;
 		}
 	}

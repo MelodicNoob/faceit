@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 
-import ClassList from '../classes/ClassList';
+import Grid from '@material-ui/core/Grid';
+
+import ClassListItem from './ClassListItem';
+
+const ClassList = ({ classes, view }) => {
+	const classesList = classes.map(({ id, name }) => (
+		<ClassListItem key={id} name={name} view={view} />
+	));
+	return (
+		<Grid container spacing={2}>
+			{classesList}
+		</Grid>
+	);
+};
 
 export default class Classes extends Component {
 	render() {
@@ -12,6 +25,6 @@ export default class Classes extends Component {
 			{ id: 7782, name: 'Class 5' },
 			{ id: 9298, name: 'Class 6' }
 		];
-		return <ClassList classes={classes} />;
+		return <ClassList classes={classes} view='cards' />;
 	}
 }
