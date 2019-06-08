@@ -9,10 +9,10 @@ import Box from '@material-ui/core/Box';
 import { Header, Footer } from './components/layout/HeaderFooter';
 import Login from './components/pages/Login';
 import Dashboard from './components/pages/Dashboard';
-import Classes from './components/pages/Classes';
-import Schedule from './components/pages/Schedule';
-import { Profile } from './components/pages/Profile';
-import { Settings } from './components/pages/Settings';
+import Classes from './components/pages/panels/Classes';
+import Schedule from './components/pages/panels/Schedule';
+import Profile from './components/pages/panels/Profile';
+import Settings from './components/pages/panels/Settings';
 import Page from './components/pages/Page';
 
 const colors = {
@@ -22,84 +22,90 @@ const colors = {
 	blue: '#29abe2'
 };
 
-const mainTheme = createMuiTheme({
+const { red, purple, orange, blue } = colors;
+
+const pages = [
+	{
+		name: 'classes',
+		icon: 'chalkboard-teacher',
+		color: red
+	},
+	{
+		name: 'schedule',
+		icon: 'clock',
+		color: purple
+	},
+	{
+		name: 'profile',
+		icon: 'user',
+		color: orange
+	},
+	{
+		name: 'settings',
+		icon: 'cog',
+		color: blue
+	}
+];
+
+const theme = createMuiTheme({
 	palette: {
 		type: 'light',
 		primary: {
-			main: colors.red
-		},
-		secondary: {
-			main: colors.purple
+			main: red
 		}
 	}
 });
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+
+		this.changeTheme = theme => {
+			this.setState({ theme });
+		};
+
+		this.state = {
+			theme
+		};
+	}
 	render() {
+		const { theme } = this.state;
 		return (
 			<Router>
-				<ThemeProvider theme={mainTheme}>
+				<ThemeProvider theme={theme}>
 					<Box className='app-container'>
-						<Header />
+						<Header changeTheme={this.changeTheme} />
 						<Switch>
 							<Route exact path='/' component={Login} />
 							<Route
 								path='/dashboard'
 								render={() => <Dashboard colors={colors} />}
 							/>
-							<Route
-								path='/classes'
-								render={props => (
-									<Page
-										{...props}
-										title='Classes'
-										icon='chalkboard-teacher'
-										color={colors.red}
-										theme='light'
-									>
-										<Classes />
-									</Page>
-								)}
-							/>
-							<Route
-								path='/schedule'
-								render={() => (
-									<Page
-										title='Schedule'
-										icon='clock'
-										color={colors.purple}
-										theme='dark'
-									>
-										<Schedule />
-									</Page>
-								)}
-							/>
-							<Route
-								path='/profile'
-								render={() => (
-									<Page
-										title='Profile'
-										icon='user'
-										color={colors.orange}
-										theme='dark'
-									>
-										<Profile />
-									</Page>
-								)}
-							/>
-							<Route
-								path='/settings'
-								render={() => (
-									<Page
-										title='Settings'
-										icon='cog'
-										color={colors.blue}
-										theme='light'
-									>
-										<Settings />
-									</Page>
-								)}
-							/>
+							{pages.map(function({ name, icon }, i) {
+								return (
+									<Route
+										key={i}
+										path={`/${name}`}
+										render={() => (
+											<Page
+												title={name}
+												icon={icon}
+												color={theme.palette.primary.main}
+											>
+												{name === 'classes' ? (
+													<Classes />
+												) : name === 'schedule' ? (
+													<Schedule />
+												) : name === 'profile' ? (
+													<Profile />
+												) : name === 'settings' ? (
+													<Settings />
+												) : null}
+											</Page>
+										)}
+									/>
+								);
+							})}
 						</Switch>
 					</Box>
 					<Footer />

@@ -53,7 +53,7 @@ class HFComponent extends Component {
 
 	render() {
 		const { isDash } = this.state;
-		const { header } = this.props;
+		const { header, changeTheme } = this.props;
 
 		const CollisionLink = React.forwardRef((props, ref) => (
 			<NavLink innerRef={ref} to={props.link} {...props} />
@@ -72,7 +72,11 @@ class HFComponent extends Component {
 								<HelpIcon fontSize='large' />
 							</IconButton>
 						</div>
-						<Navigation links={links} isDash={isDash} />
+						<Navigation
+							links={links}
+							isDash={isDash}
+							changeTheme={changeTheme}
+						/>
 					</header>
 				) : (
 					<footer className='my-4'>

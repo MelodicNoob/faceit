@@ -24,29 +24,37 @@ export default class Page extends Component {
 
 	render() {
 		const { view } = this.state;
-		const { title, color, theme, icon, children } = this.props;
+		const { title, color, icon, children } = this.props;
 		const mainTheme = createMuiTheme({
 			palette: {
-				type: theme,
 				primary: {
 					main: color
 				},
 				secondary: {
-					main: darken(color, 0.2)
+					main: darken(color, 0.1)
 				}
 			}
 		});
+
+		const childrenWithExtraProp = React.Children.map(children, child => {
+			return React.cloneElement(child, {
+				view
+			});
+		});
+
 		return (
 			<Card style={{ backgroundColor: color }}>
 				<div className='card-header clearfix text-white'>
-					<Typography variant='h5' className='float-left mt-1'>
+					<Typography variant='h5' className='float-left mt-1 text-capitalize'>
 						<i className={`fa fa-${icon}`} /> {title}
 					</Typography>
 
 					<ViewToggler view={view} toggle={this.toggleView} />
 				</div>
 				<CardContent>
-					<ThemeProvider theme={mainTheme}>{children}</ThemeProvider>
+					<ThemeProvider theme={mainTheme}>
+						{childrenWithExtraProp}
+					</ThemeProvider>
 				</CardContent>
 			</Card>
 		);

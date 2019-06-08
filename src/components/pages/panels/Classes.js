@@ -17,6 +17,7 @@ const ClassList = ({ classes, view }) => {
 
 export default class Classes extends Component {
 	render() {
+		const { view } = this.props;
 		const classes = [
 			{ id: 3102, name: 'Class 1' },
 			{ id: 4183, name: 'Class 2' },
@@ -25,6 +26,6 @@ export default class Classes extends Component {
 			{ id: 7782, name: 'Class 5' },
 			{ id: 9298, name: 'Class 6' }
 		];
-		return <ClassList classes={classes} view='cards' />;
+		return <ClassList classes={classes} view={view} />;
 	}
 }
