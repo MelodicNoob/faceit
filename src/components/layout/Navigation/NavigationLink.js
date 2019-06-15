@@ -1,34 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { useTheme } from '@material-ui/styles';
+import { newTheme } from '../../../context/ThemeContext';
 
-const NavigationLink = ({ isDash, link }) => {
-	const { name, linkColor, icon } = link;
-	const theme = useTheme();
-
-	const changeTheme = color => console.log(color);
-
-	return (
-		<li>
-			{isDash ? (
-				<NavLink
-					onClick={changeTheme(theme.palette.primary.main)}
-					to={`/${name}`}
-					style={{ background: `${linkColor}` }}
-				>
-					<i className={`fa fa-${icon}`} /> {name}
-				</NavLink>
-			) : (
-				<NavLink
-					onClick={changeTheme(theme.palette.primary.main)}
-					to={`/${name}`}
-				>
-					<i className={`fa fa-${icon}`} /> {name}
-				</NavLink>
-			)}
-		</li>
-	);
-};
-
-export default NavigationLink;
+export default class NavigationLink extends Component {
+	render() {
+		const { isDash, changeTheme } = this.props;
+		const { name, color, icon } = this.props.link;
+		return (
+			<li>
+				{isDash ? (
+					<NavLink
+						onClick={changeTheme(newTheme(color))}
+						to={`/${name}`}
+						style={{ background: `${color}` }}
+					>
+						<i className={`fa fa-${icon}`} /> {name}
+						<span style={{ color: color }}>{name}</span>
+					</NavLink>
+				) : (
+					<NavLink onClick={changeTheme(newTheme(color))} to={`/${name}`}>
+						<i className={`fa fa-${icon}`} /> {name}
+						<span>{name}</span>
+					</NavLink>
+				)}
+			</li>
+		);
+	}
+}

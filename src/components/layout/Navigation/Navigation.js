@@ -1,17 +1,19 @@
 import React from 'react';
 import NavigationLink from './NavigationLink';
 
-export default function Navigation({ links, isDash, changeTheme }) {
+import { pages } from '../../../data/pages';
+
+export default function Navigation({ isDash, changeTheme }) {
 	return (
 		<nav>
 			<ul>
-				{links.map(link => {
+				{pages.map(page => {
 					return (
 						<NavigationLink
-							changeTheme={changeTheme}
+							changeTheme={() => changeTheme}
 							isDash={isDash}
-							key={link.id}
-							link={link}
+							key={page.id}
+							link={page}
 						/>
 					);
 				})}
