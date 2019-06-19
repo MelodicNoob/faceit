@@ -8,7 +8,7 @@ import { ThemeProvider } from '@material-ui/styles';
 
 import { pages } from './data/pages';
 
-import { Header, Footer } from './components/layout/HeaderFooter';
+import { Header } from './components/layout/HeaderFooter';
 import Login from './components/pages/Login';
 import Dashboard from './components/pages/Dashboard';
 import Classes from './components/pages/panels/Classes';
@@ -38,17 +38,12 @@ class App extends Component {
 			<Router>
 				<ThemeProvider theme={theme}>
 					<Box className='app-container'>
-						<Header changeTheme={() => this.changeTheme} />
+						<Header />
 						<Switch>
 							<Route exact path='/' component={Login} />
 							<Route
 								path='/dashboard'
-								render={() => (
-									<Dashboard
-										changeTheme={() => this.changeTheme}
-										pages={pages}
-									/>
-								)}
+								render={() => <Dashboard pages={pages} />}
 							/>
 							{pages.map(function({ name, icon, viewToggle }, i) {
 								return (
@@ -78,7 +73,6 @@ class App extends Component {
 							})}
 						</Switch>
 					</Box>
-					<Footer />
 				</ThemeProvider>
 			</Router>
 		);
