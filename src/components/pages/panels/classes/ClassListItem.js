@@ -165,7 +165,6 @@ export default class ClassListItem extends Component {
 									<Typography variant='button'>Notes</Typography>
 									<TextTruncate
 										line={3}
-										element='p'
 										truncateText='…'
 										text='Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Accusantium numquam deleniti voluptate quam vitae debitis

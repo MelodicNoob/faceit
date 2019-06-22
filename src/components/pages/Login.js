@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -16,6 +16,7 @@ import {
 
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import ThemeContext from '../../context/ThemeContext';
 
 const useStyles = makeStyles(theme => ({
 	margin: {
@@ -28,6 +29,7 @@ const useStyles = makeStyles(theme => ({
 
 const Login = () => {
 	const classes = useStyles();
+	const { theme } = useContext(ThemeContext);
 	const [values, setValues] = React.useState({
 		email: '',
 		password: '',
@@ -86,7 +88,11 @@ const Login = () => {
 							</a>
 						</p>
 						<div className='text-center mb-4 mt-5'>
-							<Button color='primary' variant='contained' className='btn-block'>
+							<Button
+								color={theme.palette.primary.main}
+								variant='contained'
+								className='btn-block'
+							>
 								Log in
 							</Button>
 						</div>
