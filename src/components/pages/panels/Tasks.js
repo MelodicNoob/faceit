@@ -65,95 +65,80 @@ const task = () => {
                             </form>
                         </Grid>
                         <Grid item xs={12} md={6}>
-                            <Typography>
-                                <h1 className={task.todoTitle}>Tasks</h1>
-                                <div className={task.taskItems}>
-                                    <div className={task.taskItem}>
-                                        <Typography>
-                                            <p>Mark student's work</p>
-                                        </Typography>
-                                        <div className={task.buttons}>
-                                            <Button
-                                                variant='contained'
-                                                color='primary'
-                                                className={
-                                                    task.completeItemButton
-                                                }
-                                            >
-                                                Complete Item
-                                            </Button>
-                                            <Button
-                                                variant='contained'
-                                                color='secondary'
-                                                className={
-                                                    task.deleteItemButton
-                                                }
-                                            >
-                                                Delete Item
-                                                <DeleteIcon
-                                                    className={task.rightIcon}
-                                                />
-                                            </Button>
-                                        </div>
-                                    </div>
-                                    <div className={task.taskItem}>
-                                        <Typography>
-                                            <p>Mark student's work</p>
-                                        </Typography>
-                                        <div className={task.buttons}>
-                                            <Button
-                                                variant='contained'
-                                                color='primary'
-                                                className={
-                                                    task.completeItemButton
-                                                }
-                                            >
-                                                Complete Item
-                                            </Button>
-                                            <Button
-                                                variant='contained'
-                                                color='secondary'
-                                                className={
-                                                    task.deleteItemButton
-                                                }
-                                            >
-                                                Delete Item
-                                                <DeleteIcon
-                                                    className={task.rightIcon}
-                                                />
-                                            </Button>
-                                        </div>
-                                    </div>
-                                    <div className={task.taskItem}>
-                                        <Typography>
-                                            <p>Mark student's work</p>
-                                        </Typography>
-                                        <div className={task.buttons}>
-                                            <Button
-                                                variant='contained'
-                                                color='primary'
-                                                className={
-                                                    task.completeItemButton
-                                                }
-                                            >
-                                                Complete Item
-                                            </Button>
-                                            <Button
-                                                variant='contained'
-                                                color='secondary'
-                                                className={
-                                                    task.deleteItemButton
-                                                }
-                                            >
-                                                Delete Item
-                                                <DeleteIcon
-                                                    className={task.rightIcon}
-                                                />
-                                            </Button>
-                                        </div>
+                            <div className={task.taskItems}>
+                                <div className={task.taskItem}>
+                                    <Typography>
+                                        <p>Mark student's work</p>
+                                    </Typography>
+                                    <div className={task.buttons}>
+                                        <Button
+                                            variant='contained'
+                                            color='primary'
+                                            className={task.completeItemButton}
+                                        >
+                                            Complete Item
+                                        </Button>
+                                        <Button
+                                            variant='contained'
+                                            color='secondary'
+                                            className={task.deleteItemButton}
+                                        >
+                                            Delete Item
+                                            <DeleteIcon
+                                                className={task.rightIcon}
+                                            />
+                                        </Button>
                                     </div>
                                 </div>
-                            </Typography>
+                                <div className={task.taskItem}>
+                                    <Typography>
+                                        <p>Mark student's work</p>
+                                    </Typography>
+                                    <div className={task.buttons}>
+                                        <Button
+                                            variant='contained'
+                                            color='primary'
+                                            className={task.completeItemButton}
+                                        >
+                                            Complete Item
+                                        </Button>
+                                        <Button
+                                            variant='contained'
+                                            color='secondary'
+                                            className={task.deleteItemButton}
+                                        >
+                                            Delete Item
+                                            <DeleteIcon
+                                                className={task.rightIcon}
+                                            />
+                                        </Button>
+                                    </div>
+                                </div>
+                                <div className={task.taskItem}>
+                                    <Typography>
+                                        <p>Mark student's work</p>
+                                    </Typography>
+                                    <div className={task.buttons}>
+                                        <Button
+                                            variant='contained'
+                                            color='primary'
+                                            className={task.completeItemButton}
+                                        >
+                                            Complete Item
+                                        </Button>
+                                        <Button
+                                            variant='contained'
+                                            color='secondary'
+                                            className={task.deleteItemButton}
+                                        >
+                                            Delete Item
+                                            <DeleteIcon
+                                                className={task.rightIcon}
+                                            />
+                                        </Button>
+                                    </div>
+                                </div>
+                            </div>
                         </Grid>
                     </Grid>
                 </Card>
