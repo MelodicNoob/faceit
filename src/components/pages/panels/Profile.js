@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Card, FormControl, Typography, Avatar } from '@material-ui/core';
+import { Grid, Card, FormControl, Avatar } from '@material-ui/core';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 
@@ -11,59 +11,48 @@ const useStyles = makeStyles(theme => ({
         width: '100%',
         height: 'auto',
         margin: theme.spacing(1)
+    },
+    mb: {
+        margin: theme.spacing(1)
     }
 }));
 
 const Profile = () => {
-    const classes = useStyles();
-    const [checked, setChecked] = React.useState(['wifi']);
-
-    const handleToggle = value => () => {
-        const currentIndex = checked.indexOf(value);
-        const newChecked = [...checked];
-
-        if (currentIndex === -1) {
-            newChecked.push(value);
-        } else {
-            newChecked.splice(currentIndex, 1);
-        }
-
-        setChecked(newChecked);
-    };
+    const profile = useStyles();
 
     return (
         <Grid container spacing={4}>
             <Grid item xs={12}>
                 <Card>
                     <Grid container spacing={3}>
-                        <Grid item xs={4} lg={3}>
+                        <Grid item xs={11} lg={3}>
                             <Avatar
-                                className={classes.bigAvatar}
+                                className={profile.bigAvatar}
                                 alt='Your Name'
                                 src={AvatarPH}
                             />
                         </Grid>
                         <Grid item xs={12} md={6}>
                             <form>
-                                <FormControl fullWidth>
+                                <FormControl className={profile.mb} fullWidth>
                                     <InputLabel required htmlFor='firstname'>
                                         First Name
                                     </InputLabel>
                                     <Input id='firstname' type='text' />
                                 </FormControl>
-                                <FormControl fullWidth>
+                                <FormControl className={profile.mb} fullWidth>
                                     <InputLabel required htmlFor='class'>
                                         Class
                                     </InputLabel>
                                     <Input id='class' type='text' />
                                 </FormControl>
-                                <FormControl fullWidth>
+                                <FormControl className={profile.mb} fullWidth>
                                     <InputLabel required htmlFor='email'>
                                         Email
                                     </InputLabel>
                                     <Input id='email' type='email' />
                                 </FormControl>
-                                <FormControl fullWidth>
+                                <FormControl className={profile.mb} fullWidth>
                                     <InputLabel required htmlFor='phone-number'>
                                         Phone Number
                                     </InputLabel>
