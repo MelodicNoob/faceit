@@ -48,7 +48,7 @@ const task = () => {
                         <Grid item xs={12} md={6}>
                             <form>
                                 <FormControl className={task.mb} fullWidth>
-                                    <InputLabel required htmlFor='class-name'>
+                                    <InputLabel required htmlFor='task'>
                                         Task
                                     </InputLabel>
                                     <Input id='task' type='text' />
@@ -68,7 +68,7 @@ const task = () => {
                             <div className={task.taskItems}>
                                 <div className={task.taskItem}>
                                     <Typography>
-                                        <p>Mark student's work</p>
+                                        <p>Mark Student's work</p>
                                     </Typography>
                                     <div className={task.buttons}>
                                         <Button
@@ -92,7 +92,7 @@ const task = () => {
                                 </div>
                                 <div className={task.taskItem}>
                                     <Typography>
-                                        <p>Mark student's work</p>
+                                        <p>Mark Student's work</p>
                                     </Typography>
                                     <div className={task.buttons}>
                                         <Button
@@ -116,7 +116,7 @@ const task = () => {
                                 </div>
                                 <div className={task.taskItem}>
                                     <Typography>
-                                        <p>Mark student's work</p>
+                                        <p>Mark Student's work</p>
                                     </Typography>
                                     <div className={task.buttons}>
                                         <Button
