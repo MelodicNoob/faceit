@@ -4,7 +4,7 @@ import { Card, CardContent, Typography } from '@material-ui/core';
 import Classes from './panels/classes/Classes';
 import Upload from './panels/Upload';
 import Profile from './panels/Profile';
-import Tasks from './panels/Tasks';
+import Schedule from './panels/Schedule';
 import ThemeContext from '../../context/ThemeContext';
 
 export default function DashCard({ id, name, icon, color }) {
@@ -28,8 +28,8 @@ export default function DashCard({ id, name, icon, color }) {
                     <Upload dash />
                 ) : name === 'profile' ? (
                     <Profile dash />
-                ) : name === 'tasks' ? (
-                    <Tasks dash />
+                ) : name === 'schedule' ? (
+                    <Schedule dash />
                 ) : null}
             </CardContent>
         </Card>
