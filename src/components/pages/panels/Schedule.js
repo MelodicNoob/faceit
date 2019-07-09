@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     taskItem: {}
 }));
 
-const task = () => {
+const Schedule = () => {
     // const task = useStyles();
     useStyles();
 
@@ -48,4 +48,4 @@ const task = () => {
     );
 };
 
-export default task;
+export default Schedule;
