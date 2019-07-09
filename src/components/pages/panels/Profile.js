@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Card, FormControl, Avatar } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 
@@ -38,25 +39,46 @@ const Profile = () => {
                                     <InputLabel required htmlFor='firstname'>
                                         First Name
                                     </InputLabel>
-                                    <Input id='firstname' type='text' />
+                                    <Input
+                                        id='firstname'
+                                        type='text'
+                                        value='John'
+                                    />
                                 </FormControl>
                                 <FormControl className={profile.mb} fullWidth>
                                     <InputLabel required htmlFor='class'>
                                         Class
                                     </InputLabel>
-                                    <Input id='class' type='text' />
+                                    <Input
+                                        id='class'
+                                        type='number'
+                                        value='3102'
+                                    />
                                 </FormControl>
                                 <FormControl className={profile.mb} fullWidth>
                                     <InputLabel required htmlFor='email'>
                                         Email
                                     </InputLabel>
-                                    <Input id='email' type='email' />
+                                    <Input
+                                        id='email'
+                                        type='email'
+                                        value='johndoe@test.com'
+                                    />
                                 </FormControl>
                                 <FormControl className={profile.mb} fullWidth>
                                     <InputLabel required htmlFor='phone-number'>
                                         Phone Number
                                     </InputLabel>
-                                    <Input id='phone-number' type='text' />
+                                    <Input
+                                        id='phone-number'
+                                        type='tel'
+                                        value='0491 570 156'
+                                    />
+                                </FormControl>
+                                <FormControl className='mb-4 mt-1' fullWidth>
+                                    <Button variant='contained' color='default'>
+                                        Update Profile
+                                    </Button>
                                 </FormControl>
                             </form>
                         </Grid>

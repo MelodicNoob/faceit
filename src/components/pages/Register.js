@@ -27,10 +27,11 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const Login = () => {
+const Register = () => {
     const classes = useStyles();
     const { theme } = useContext(ThemeContext);
     const [values, setValues] = React.useState({
+        name: '',
         email: '',
         password: '',
         showPassword: false
@@ -48,6 +49,20 @@ const Login = () => {
             <CardContent className='mx-4 mt-4'>
                 <Grid container spacing={4} justify='center'>
                     <Grid item md={8} lg={6}>
+                        <FormControl
+                            fullWidth
+                            className={clsx(classes.margin, classes.textField)}
+                        >
+                            <InputLabel htmlFor='adornment-name'>
+                                Your Name
+                            </InputLabel>
+                            <Input
+                                id='adornment-name'
+                                type='text'
+                                value={values.name}
+                                onChange={handleChange('name')}
+                            />
+                        </FormControl>
                         <FormControl
                             fullWidth
                             className={clsx(classes.margin, classes.textField)}
@@ -90,26 +105,21 @@ const Login = () => {
                                 }
                             />
                         </FormControl>
-                        <p className='font-small d-flex justify-content-end'>
-                            <a href='#!' className='font-weight-bold mt-2'>
-                                Forgot Password?
-                            </a>
-                        </p>
                         <div className='text-center mb-4 mt-5'>
                             <Button
                                 color={theme.palette.primary.main}
                                 variant='contained'
                                 className='btn-block'
                             >
-                                Log in
+                                Register
                             </Button>
                             <Button
                                 color={theme.palette.primary.main}
                                 variant='contained'
                                 className='btn-block'
-                                href='/register '
+                                href='/login'
                             >
-                                Register
+                                Login
                             </Button>
                         </div>
                     </Grid>
@@ -119,4 +129,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

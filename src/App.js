@@ -8,11 +8,13 @@ import { pages } from './data/pages';
 
 import { Header } from './components/layout/HeaderFooter';
 import Login from './components/pages/Login';
-import Dashboard from './components/pages/Dashboard';
 import Classes from './components/pages/panels/classes/Classes';
+import Dashboard from './components/pages/Dashboard';
+import Home from './components/pages/Home';
 import Tasks from './components/pages/panels/Tasks';
 import Profile from './components/pages/panels/Profile';
 import Upload from './components/pages/panels/Upload';
+import Register from './components/pages/Register';
 import Page from './components/pages/Page';
 import ThemeContext from './context/ThemeContext';
 
@@ -23,7 +25,9 @@ const App = () => {
             <Box className='app-container'>
                 <Header />
                 <Switch>
-                    <Route exact path='/' component={Login} />
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/login' component={Login} />
+                    <Route exact path='/register' component={Register} />
                     <Route
                         path='/dashboard'
                         render={() => <Dashboard pages={pages} />}
@@ -34,7 +38,7 @@ const App = () => {
                                 key={i}
                                 path={`/${name}`}
                                 render={() => (
-                                <Page
+                                    <Page
                                         title={name}
                                         icon={icon}
                                         color={theme.palette.primary.main}

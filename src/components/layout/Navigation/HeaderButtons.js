@@ -9,26 +9,26 @@ import { colors } from '../../../context/ThemeContext';
 import ThemeContext from '../../../context/ThemeContext';
 
 export default function HeaderButtons() {
-	const { changeTheme } = useContext(ThemeContext);
-	const CollisionLink = React.forwardRef((props, ref) => (
-		<NavLink innerRef={ref} to={props.link} {...props} />
-	));
-	return (
-		<div className='header-buttons'>
-			<IconButton
-				onClick={() => changeTheme(colors.red)}
-				link='/dashboard'
-				component={CollisionLink}
-			>
-				<HomeIcon fontSize='large' />
-			</IconButton>
-			<IconButton
-				onClick={() => changeTheme(colors.red)}
-				link='/'
-				component={CollisionLink}
-			>
-				<HelpIcon fontSize='large' />
-			</IconButton>
-		</div>
-	);
+    const { changeTheme } = useContext(ThemeContext);
+    const CollisionLink = React.forwardRef((props, ref) => (
+        <NavLink innerRef={ref} to={props.link} {...props} />
+    ));
+    return (
+        <div className='header-buttons'>
+            <IconButton
+                onClick={() => changeTheme(colors.red)}
+                link='/dashboard'
+                component={CollisionLink}
+            >
+                <HomeIcon fontSize='large' />
+            </IconButton>
+            <IconButton
+                onClick={() => changeTheme(colors.red)}
+                link='/login'
+                component={CollisionLink}
+            >
+                <HelpIcon fontSize='large' />
+            </IconButton>
+        </div>
+    );
 }
