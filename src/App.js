@@ -11,7 +11,7 @@ import Login from './components/pages/Login';
 import Classes from './components/pages/panels/classes/Classes';
 import Dashboard from './components/pages/Dashboard';
 import Home from './components/pages/Home';
-import Tasks from './components/pages/panels/Tasks';
+import Schedule from './components/pages/panels/Schedule';
 import Profile from './components/pages/panels/Profile';
 import Upload from './components/pages/panels/Upload';
 import Register from './components/pages/Register';
@@ -50,8 +50,8 @@ const App = () => {
                                             <Upload />
                                         ) : name === 'profile' ? (
                                             <Profile />
-                                        ) : name === 'tasks' ? (
-                                            <Tasks />
+                                        ) : name === 'schedule' ? (
+                                            <Schedule />
                                         ) : null}
                                     </Page>
                                 )}
