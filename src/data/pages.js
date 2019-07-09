@@ -26,7 +26,7 @@ export const pages = [
     },
     {
         id: 'd3',
-        name: 'tasks',
+        name: 'schedule',
         icon: 'clock',
         viewToggle: false,
         color: blue
