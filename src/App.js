@@ -7,6 +7,7 @@ import Box from '@material-ui/core/Box';
 import { pages } from './data/pages';
 
 import { Header } from './components/layout/HeaderFooter';
+import Admin from './components/pages/Admin';
 import Login from './components/pages/Login';
 import Classes from './components/pages/panels/classes/Classes';
 import Dashboard from './components/pages/Dashboard';
@@ -28,6 +29,7 @@ const App = () => {
                     <Route exact path='/' component={Home} />
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/register' component={Register} />
+                    <Route exact path='/admin' component={Admin} />
                     <Route
                         path='/dashboard'
                         render={() => <Dashboard pages={pages} />}
