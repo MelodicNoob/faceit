@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 
 const Login = () => {
     const classes = useStyles();
-    const { theme } = useContext(ThemeContext);
+    useContext(ThemeContext);
     const [values, setValues] = React.useState({
         email: '',
         password: '',
@@ -100,14 +100,14 @@ const Login = () => {
                         </p>
                         <div className='text-center mb-4 mt-5'>
                             <Button
-                                color={theme.palette.primary.main}
+                                color='primary'
                                 variant='contained'
                                 className='btn-block'
                             >
                                 Log in
                             </Button>
                             <Button
-                                color={theme.palette.primary.main}
+                                color='secondary'
                                 variant='contained'
                                 className='btn-block'
                                 href='/register '

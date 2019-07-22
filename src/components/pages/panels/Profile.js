@@ -86,7 +86,7 @@ const Profile = () => {
                                     />
                                 </FormControl>
                                 <FormControl className='mb-4 mt-1' fullWidth>
-                                    <Button variant='contained' color='default'>
+                                    <Button variant='contained' color='primary'>
                                         Update Profile
                                     </Button>
                                 </FormControl>

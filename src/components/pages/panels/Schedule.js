@@ -16,6 +16,7 @@ import {
     KeyboardDatePicker,
     KeyboardTimePicker
 } from '@material-ui/pickers';
+import { TextField } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     mb: {
@@ -46,9 +47,19 @@ const Schedule = () => {
                             <form>
                                 <FormControl className={classes.mb} fullWidth>
                                     <InputLabel htmlFor='class-name'>
-                                        Name of Task
+                                        Task's name
                                     </InputLabel>
                                     <Input id='class-name' type='text' />
+                                </FormControl>
+                                <FormControl className={classes.mb} fullWidth>
+                                    <TextField
+                                        id='standard-multiline-flexible'
+                                        label="Task's description"
+                                        multiline
+                                        rowsMax='4'
+                                        className={classes.textField}
+                                        margin='normal'
+                                    />
                                 </FormControl>
                                 <FormControl className={classes.mb}>
                                     <MuiPickersUtilsProvider
@@ -87,6 +98,7 @@ const Schedule = () => {
                                     fullWidth
                                     type='button'
                                     variant='contained'
+                                    color='primary'
                                 >
                                     Add Task To Schedule
                                 </Button>

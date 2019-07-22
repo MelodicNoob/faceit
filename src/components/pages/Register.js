@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 
 const Register = () => {
     const classes = useStyles();
-    const { theme } = useContext(ThemeContext);
+    useContext(ThemeContext);
     const [values, setValues] = React.useState({
         name: '',
         email: '',
@@ -107,14 +107,14 @@ const Register = () => {
                         </FormControl>
                         <div className='text-center mb-4 mt-5'>
                             <Button
-                                color={theme.palette.primary.main}
+                                color='primary'
                                 variant='contained'
                                 className='btn-block'
                             >
                                 Register
                             </Button>
                             <Button
-                                color={theme.palette.primary.main}
+                                color='secondary'
                                 variant='contained'
                                 className='btn-block'
                                 href='/login'
