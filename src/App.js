@@ -9,8 +9,11 @@ import { pages } from './data/pages';
 import { Header } from './components/layout/HeaderFooter';
 import Admin from './components/pages/Admin';
 import Login from './components/pages/Login';
+import IndividualClass from './components/pages/IndividualClass/IndividualClass';
+import IndividualStudent from './components/pages/IndividualStudent';
 import Classes from './components/pages/panels/classes/Classes';
 import Dashboard from './components/pages/Dashboard';
+import ForgottenPassword from './components/pages/ForgottenPassword';
 import Home from './components/pages/Home';
 import Schedule from './components/pages/panels/Schedule';
 import Profile from './components/pages/panels/Profile';
@@ -30,6 +33,39 @@ const App = () => {
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/register' component={Register} />
                     <Route exact path='/admin' component={Admin} />
+                    <Route
+                        exact
+                        path='/class/:id'
+                        render={() => (
+                            <Page
+                                title={'Individual Class'}
+                                icon={'chalkboard-teacher'}
+                                color={'#FF0000'}
+                                viewToggle={true}
+                            >
+                                <IndividualClass />
+                            </Page>
+                        )}
+                    />
+                    <Route
+                        exact
+                        path='class/:id/student/:id'
+                        render={() => (
+                            <Page
+                                title={'Individual Student'}
+                                icon={'chalkboard-teacher'}
+                                color={'#FF0000'}
+                                viewToggle={true}
+                            >
+                                <IndividualStudent />
+                            </Page>
+                        )}
+                    />
+                    <Route
+                        exact
+                        path='/forgotten-password'
+                        component={ForgottenPassword}
+                    />
                     <Route
                         path='/dashboard'
                         render={() => <Dashboard pages={pages} />}

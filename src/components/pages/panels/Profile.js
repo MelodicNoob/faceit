@@ -36,13 +36,23 @@ const Profile = () => {
                         <Grid item xs={12} md={6}>
                             <form>
                                 <FormControl className={profile.mb} fullWidth>
-                                    <InputLabel required htmlFor='firstname'>
+                                    <InputLabel required htmlFor='firstName'>
                                         First Name
                                     </InputLabel>
                                     <Input
-                                        id='firstname'
+                                        id='firstName'
                                         type='text'
                                         value='John'
+                                    />
+                                </FormControl>
+                                <FormControl className={profile.mb} fullWidth>
+                                    <InputLabel required htmlFor='lastName'>
+                                        Last Name
+                                    </InputLabel>
+                                    <Input
+                                        id='lastName'
+                                        type='text'
+                                        value='Doe'
                                     />
                                 </FormControl>
                                 <FormControl className={profile.mb} fullWidth>

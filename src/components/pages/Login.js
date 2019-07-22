@@ -91,7 +91,10 @@ const Login = () => {
                             />
                         </FormControl>
                         <p className='font-small d-flex justify-content-end'>
-                            <a href='#!' className='font-weight-bold mt-2'>
+                            <a
+                                href='/forgotten-password'
+                                className='font-weight-bold mt-2'
+                            >
                                 Forgot Password?
                             </a>
                         </p>
