@@ -7,7 +7,7 @@ const Home = () => {
         <Card>
             <CardContent className='mx-4 mt-4'>
                 <Grid container spacing={4} justify='center'>
-                    <h1>FaceIT</h1>
+                    <h1>Welcome to FaceIT</h1>
                 </Grid>
             </CardContent>
         </Card>

@@ -94,7 +94,7 @@ const Schedule = () => {
                                     </MuiPickersUtilsProvider>
                                 </FormControl>
                                 <Button
-                                    className={classes.mb}
+                                    className='m-1'
                                     fullWidth
                                     type='button'
                                     variant='contained'

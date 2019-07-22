@@ -67,7 +67,7 @@ const Login = () => {
                             className={clsx(classes.margin, classes.textField)}
                         >
                             <InputLabel htmlFor='adornment-password'>
-                                Password
+                                Your Password
                             </InputLabel>
                             <Input
                                 id='adornment-password'

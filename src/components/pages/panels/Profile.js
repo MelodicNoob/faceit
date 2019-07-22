@@ -56,16 +56,6 @@ const Profile = () => {
                                     />
                                 </FormControl>
                                 <FormControl className={profile.mb} fullWidth>
-                                    <InputLabel required htmlFor='class'>
-                                        Class
-                                    </InputLabel>
-                                    <Input
-                                        id='class'
-                                        type='number'
-                                        value='3102'
-                                    />
-                                </FormControl>
-                                <FormControl className={profile.mb} fullWidth>
                                     <InputLabel required htmlFor='email'>
                                         Email
                                     </InputLabel>
