@@ -23,83 +23,80 @@ import Page from './components/pages/Page';
 import ThemeContext from './context/ThemeContext';
 
 const App = () => {
-    const { theme } = useContext(ThemeContext);
-    return (
-        <Router>
-            <Box className='app-container'>
-                <Header />
-                <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route exact path='/login' component={Login} />
-                    <Route exact path='/register' component={Register} />
-                    <Route exact path='/admin' component={Admin} />
-                    <Route
-                        exact
-                        path='/class/:id'
-                        render={() => (
-                            <Page
-                                title={'Individual Class'}
-                                icon={'chalkboard-teacher'}
-                                color={'#FF0000'}
-                                viewToggle={true}
-                            >
-                                <IndividualClass />
-                            </Page>
-                        )}
-                    />
-                    <Route
-                        exact
-                        path='class/:id/student/:id'
-                        render={() => (
-                            <Page
-                                title={'Individual Student'}
-                                icon={'chalkboard-teacher'}
-                                color={'#FF0000'}
-                                viewToggle={true}
-                            >
-                                <IndividualStudent />
-                            </Page>
-                        )}
-                    />
-                    <Route
-                        exact
-                        path='/forgotten-password'
-                        component={ForgottenPassword}
-                    />
-                    <Route
-                        path='/dashboard'
-                        render={() => <Dashboard pages={pages} />}
-                    />
-                    {pages.map(function({ name, icon, viewToggle }, i) {
-                        return (
-                            <Route
-                                key={i}
-                                path={`/${name}`}
-                                render={() => (
-                                    <Page
-                                        title={name}
-                                        icon={icon}
-                                        color={theme.palette.primary.main}
-                                        viewToggle={viewToggle}
-                                    >
-                                        {name === 'classes' ? (
-                                            <Classes />
-                                        ) : name === 'add' ? (
-                                            <Upload />
-                                        ) : name === 'profile' ? (
-                                            <Profile />
-                                        ) : name === 'schedule' ? (
-                                            <Schedule />
-                                        ) : null}
-                                    </Page>
-                                )}
-                            />
-                        );
-                    })}
-                </Switch>
-            </Box>
-        </Router>
-    );
+  const { theme } = useContext(ThemeContext);
+  return (
+    <Router>
+      <Box className='app-container'>
+        <Header />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/register' component={Register} />
+          <Route exact path='/admin' component={Admin} />
+          <Route
+            exact
+            path='/class/:id'
+            render={() => (
+              <Page
+                title={'Individual Class'}
+                icon={'chalkboard-teacher'}
+                color={'#FF0000'}
+                viewToggle={true}
+              >
+                <IndividualClass />
+              </Page>
+            )}
+          />
+          <Route
+            exact
+            path='class/:id/student/:id'
+            render={() => (
+              <Page
+                title={'Individual Student'}
+                icon={'chalkboard-teacher'}
+                color={'#FF0000'}
+                viewToggle={true}
+              >
+                <IndividualStudent />
+              </Page>
+            )}
+          />
+          <Route
+            exact
+            path='/forgotten-password'
+            component={ForgottenPassword}
+          />
+          <Route path='/dashboard' render={() => <Dashboard pages={pages} />} />
+          {pages.map(function({ name, icon, viewToggle }, i) {
+            return (
+              <Route
+                key={i}
+                path={`/${name}`}
+                render={() => (
+                  <Page
+                    title={name}
+                    icon={icon}
+                    color={theme.palette.primary.main}
+                    viewToggle={viewToggle}
+                  >
+                    {name === 'classes' ? (
+                      <Classes />
+                    ) : name === 'add' ? (
+                      <Upload />
+                    ) : name === 'schedule' ? (
+                      <Schedule />
+                    ) : name === 'profile' ? (
+                      <Profile />
+                    ) : null}
+                  </Page>
+                )}
+              />
+            );
+          })}
+        </Switch>
+      </Box>
+    </Router>
+  );
 };
 
 export default App;
