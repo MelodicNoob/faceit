@@ -92,7 +92,7 @@ const Login = () => {
                         </FormControl>
                         <p className='font-small d-flex justify-content-end'>
                             <a
-                                href='/forgotten-password'
+                                href='/forgot-password'
                                 className='font-weight-bold mt-2'
                             >
                                 Forgot Password?

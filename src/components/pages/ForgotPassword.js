@@ -23,9 +23,8 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const ForgottenPassword = () => {
+const ForgotPassword = () => {
     const classes = useStyles();
-    const { theme } = useContext(ThemeContext);
     const [values, setValues] = React.useState({
         email: ''
     });
@@ -39,6 +38,7 @@ const ForgottenPassword = () => {
             <CardContent className='mx-4 mt-4'>
                 <Grid container spacing={4} justify='center'>
                     <Grid item md={8} lg={6}>
+                        <h1 className='text-center'>Forgot Password</h1>
                         <FormControl
                             fullWidth
                             className={clsx(classes.margin, classes.textField)}
@@ -55,7 +55,7 @@ const ForgottenPassword = () => {
                         </FormControl>
                         <div className='text-center mb-4 mt-5'>
                             <Button
-                                color={theme.palette.primary.main}
+                                color='primary'
                                 variant='contained'
                                 className='btn-block'
                             >
@@ -69,4 +69,4 @@ const ForgottenPassword = () => {
     );
 };
 
-export default ForgottenPassword;
+export default ForgotPassword;

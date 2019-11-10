@@ -34,7 +34,14 @@ export default class StudentListItem extends Component {
     };
     render() {
         const { edit } = this.state;
-        const { id, firstName, view, medicalCount, issuesCount } = this.props;
+        const {
+            id,
+            firstName,
+            lastName,
+            view,
+            medicalCount,
+            issuesCount
+        } = this.props;
         const isCard = view === 'cards';
 
         const CollisionLink = React.forwardRef((props, ref) => (
@@ -76,7 +83,7 @@ export default class StudentListItem extends Component {
                             </div>
                             <CardContent>
                                 <Typography variant='h5'>
-                                    {firstName}
+                                    {firstName} {lastName}
                                 </Typography>
                                 {this.state.edit ? (
                                     <>
@@ -139,7 +146,7 @@ export default class StudentListItem extends Component {
                                         size='small'
                                         component={CollisionLink}
                                     >
-                                        Edit Student <KeyboardArrowRight />
+                                        View Student <KeyboardArrowRight />
                                     </Button>
                                 </div>
                             )}
