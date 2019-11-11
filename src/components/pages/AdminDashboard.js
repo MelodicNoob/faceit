@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DashCard from './DashCard';
 
-export default class Dashboard extends Component {
+export default class AdminDashboard extends Component {
 	render() {
 		const { pages } = this.props;
 		return (
