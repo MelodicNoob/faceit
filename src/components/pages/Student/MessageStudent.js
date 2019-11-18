@@ -23,7 +23,8 @@ const useStyles = makeStyles(theme => ({
 const MessageStudent = () => {
     const classes = useStyles();
     const [student, setValues] = useState({
-        email: 'johndoe@tafe.wa.edu.au'
+        email: 'johndoe@tafe.wa.edu.au',
+        messageBody: ''
     });
 
     const handleChange = prop => event => {
@@ -47,6 +48,20 @@ const MessageStudent = () => {
                                 type='email'
                                 value={student.email}
                                 onChange={handleChange('email')}
+                            />
+                        </FormControl>
+                        <FormControl
+                            fullWidth
+                            className={clsx(classes.margin, classes.textField)}
+                        >
+                            <InputLabel htmlFor='adornment-email'>
+                                Message
+                            </InputLabel>
+                            <Input
+                                type='text'
+                                value={student.messageBody}
+                                onChange={handleChange('messageBody')}
+                                multiline
                             />
                         </FormControl>
                         <div className='text-center mb-4 mt-5'>
